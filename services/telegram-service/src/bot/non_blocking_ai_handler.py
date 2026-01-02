@@ -271,7 +271,7 @@ class NonBlockingAIHandler:
                         # 清理临时文件
                         try:
                             os.unlink(temp_file_path)
-                        except:
+                        except Exception:
                             pass
                             
                     except Exception as file_error:
@@ -368,7 +368,7 @@ class NonBlockingAIHandler:
                 duration = datetime.now() - start_time
                 return f"{duration.total_seconds():.1f}秒"
             return "未知"
-        except:
+        except Exception:
             return "未知"
     
     def get_active_analyses_count(self) -> int:
