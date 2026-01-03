@@ -4728,10 +4728,9 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
             await query.edit_message_text(text, reply_markup=keyboard, parse_mode='Markdown')
             
-        elif query.data in ["coin_search", "start_coin_analysis", "help", "aggregated_alerts", "subscription"]:
+        elif query.data in ["coin_search", "help", "aggregated_alerts", "subscription"]:
             feature_names = {
-                "coin_search": "🤖 AI分析（已下线）",
-                "start_coin_analysis": "🤖 AI分析（已下线）",
+                "coin_search": "🔍 币种搜索",
                 "help": "ℹ️ 帮助",
                 "aggregated_alerts": "🚨 信号",
                 "subscription": "💲 订阅"
@@ -4741,12 +4740,20 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             if query.data == "help":
                 await send_help_message(update, context, via_query=True)
-            elif query.data in {"coin_search", "start_coin_analysis"}:
-                await query.edit_message_text(
-                    AI_FEATURE_NOTICE,
-                    reply_markup=build_ai_placeholder_keyboard(),
-                    parse_mode='Markdown'
+            elif query.data == "coin_search":
+                # 币种搜索 -> 跳转到币种查询
+                from common.symbols import get_configured_symbols
+                symbols = get_configured_symbols()
+                coins = [s.replace("USDT", "") for s in symbols] if symbols else ["BTC", "ETH", "SOL"]
+                coins_text = "\n".join(coins)
+                text = (
+                    "🔍 *币种查询*\n\n"
+                    f"```\n{coins_text}\n```\n"
+                    f"📊 可查询币种 ({len(coins)} 个)\n"
+                    "💡 使用方法: 发送 `币种名!` 触发查询"
                 )
+                keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🏠 返回主菜单", callback_data="main_menu")]])
+                await query.edit_message_text(text, reply_markup=keyboard, parse_mode='Markdown')
                 return
             else:
                 await query.message.reply_text(
@@ -5327,17 +5334,13 @@ async def handle_keyboard_message(update: Update, context: ContextTypes.DEFAULT_
             action = button_mapping[message_text]
             
             # 统一占位：未开放功能的提示
-            if action in {"start_coin_analysis", "aggregated_alerts"}:
+            if action == "aggregated_alerts":
                 placeholder_kb = InlineKeyboardMarkup([[
                     InlineKeyboardButton("🏠 返回主菜单", callback_data="main_menu"),
                     InlineKeyboardButton("🔄 刷新", callback_data="main_menu")
                 ]])
-                placeholder_text = (
-                    AI_FEATURE_NOTICE if action == "start_coin_analysis"
-                    else "🚨 信号功能暂未开发"
-                )
                 await update.message.reply_text(
-                    placeholder_text,
+                    "🚨 信号功能暂未开发",
                     reply_markup=placeholder_kb,
                     parse_mode='Markdown'
                 )
