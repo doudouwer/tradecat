@@ -1,0 +1,113 @@
+{
+  "symbol": "BTCUSDT",
+  "interval": "1h",
+  "prompt_name": "市场全局解析",
+  "timestamp_utc": "20260103_045705",
+  "variable_map": [
+    {
+      "name": "symbol",
+      "type": "str",
+      "summary": "BTCUSDT"
+    },
+    {
+      "name": "interval_requested",
+      "type": "str",
+      "summary": "1h"
+    },
+    {
+      "name": "generated_at",
+      "type": "str",
+      "summary": "2026-01-03T04:56:54.833468+00:00"
+    },
+    {
+      "name": "candles_latest_50",
+      "type": "dict[str->list]",
+      "summary": "7 intervals; rows per interval: {'1m': 50, '5m': 50, '15m': 50, '1h': 50, '4h': 50, '1d': 50, '1w': 50}"
+    },
+    {
+      "name": "metrics_5m_latest_50",
+      "type": "list",
+      "summary": "list len=0"
+    },
+    {
+      "name": "indicator_samples",
+      "type": "dict[str->list|error]",
+      "summary": "37 tables; rows: {'基础数据同步器.py': 375, '期货情绪元数据.py': 259, '全量支撑阻力扫描器.py': 491, '布林带扫描器.py': 491, 'VWAP离线信号扫描.py': 491, '成交量比率扫描器.py': 491, 'MFI资金流量扫描器.py': 491, '流动性扫描器.py': 491, '智能RSI扫描器.py': 491, '趋势云反转扫描器.py': 491, '大资金操盘扫描器.py': 491, '量能斐波狙击扫描器.py': 491, '零延迟趋势扫描器.py': 491, '量能信号扫描器.py': 491, '多空信号扫描器.py': 491, '剥头皮信号扫描器.py': 491, '谐波信号扫描器.py': 491, 'SuperTrend.py': 491, 'ADX.py': 491, 'CCI.py': 491, 'WilliamsR.py': 491, 'Donchian.py': 491, 'Keltner.py': 491, 'Ichimoku.py': 491, '数据监控.py': 491, '期货情绪聚合表.py': 237, '期货情绪缺口监控.py': 519, 'VPVR排行生成器.py': 477, '超级精准趋势扫描器.py': 477, 'MACD柱状扫描器.py': 10, 'KDJ随机指标扫描器.py': 10, 'ATR波幅扫描器.py': 10, 'G，C点扫描器.py': 10, 'OBV能量潮扫描器.py': 10, 'CVD信号排行榜.py': 10, '主动买卖比扫描器.py': 10, 'K线形态扫描器.py': 10}"
+    },
+    {
+      "name": "docs",
+      "type": "dict",
+      "summary": "dict keys: ['MACD柱状扫描器.py', '布林带扫描器.py', '成交量比率扫描器.py', 'ATR波幅扫描器.py', 'KDJ随机指标扫描器.py']..."
+    }
+  ],
+  "docs": {
+    "symbol": {
+      "what": "未定义",
+      "why": "未定义",
+      "how": "未定义"
+    },
+    "interval_requested": {
+      "what": "未定义",
+      "why": "未定义",
+      "how": "未定义"
+    },
+    "generated_at": {
+      "what": "未定义",
+      "why": "未定义",
+      "how": "未定义"
+    },
+    "candles_latest_50": {
+      "what": "多周期（1m/5m/15m/1h/4h/1d/1w）各 50 根的原始 K 线序列，包含价格、量能、taker 方向信息以及采集元数据。用于一切二次计算（指标、形态、统计特征）。",
+      "why": "K 线是最底层真相源：所有指标与形态最终都回溯到开高低收与量。保留多周期并行序列能验证共振、发现不同尺度的趋势/震荡切换，也能交叉核验上层指标是否可信。",
+      "how": "优先对目标周期和其上下级周期做压缩摘要（如最近 N 根的 OHLCV 概览、关键高低点、收益/波动率、taker 买卖占比），再注入提示词；避免整包 50×7 条原始行直接送入模型。必要时只暴露关键统计（均值、方差、极值、成交量/额累积、买卖差分），同时保留 bucket_ts 用于时间对齐。",
+      "fields": {
+        "exchange": "数据来源交易所，现固定 binance_futures_um。",
+        "symbol": "交易对标识，例如 ETHUSDT。",
+        "bucket_ts": "K 线起始时间（对齐周期边界，UTC）。",
+        "open": "开盘价。",
+        "high": "最高价。",
+        "low": "最低价。",
+        "close": "收盘价。",
+        "volume": "基础资产成交量（币数量）。",
+        "quote_volume": "计价资产成交额（USDT）。",
+        "trade_count": "成交笔数。",
+        "is_closed": "该K线是否闭合（True 表示已完成）。",
+        "source": "采集渠道标记，如 binance_ws/binance_zip。",
+        "ingested_at": "写入时间（采集）。",
+        "updated_at": "最后更新时间（重刷/修正）。",
+        "taker_buy_volume": "吃单买入量（币）。",
+        "taker_buy_quote_volume": "吃单买入额（USDT）。"
+      }
+    },
+    "metrics_5m_latest_50": {
+      "what": "Binance U 本位永续 5m 聚合指标快照。每行代表一个 5 分钟时间桶，浓缩了全市场合约资金结构：持仓规模、顶级账户与全体账户的多空力量，以及主动成交方向。字段解释：create_time=时间桶(UTC)，symbol=交易对，sum_open_interest=总持仓量(张)，sum_open_interest_value=总持仓价值(USDT)，count_toptrader_long_short_ratio=顶级账户多空样本数，sum_toptrader_long_short_ratio=顶级账户多空比总和（除以 count 得均值），count_long_short_ratio=全体账户多空样本数，sum_taker_long_short_vol_ratio=taker 主导成交多空量比总和（除以样本数得均值），exchange=来源交易所，source=采集渠道，is_closed=桶是否闭合，ingested_at=写入时间，updated_at=最后更新时间。",
+      "why": "该表直接反映资金侧情绪与仓位结构：持仓量与价值揭示杠杆堆积程度，多空比例揭示方向倾斜，taker 多空量比展示主动交易倾向。它们可提前暴露潜在的挤仓风险或趋势加速点，对短线择时和风险控制价值极高。",
+      "how": "先看 sum_open_interest/ sum_open_interest_value 的趋势与拐点，判断杠杆堆积或出清；结合顶级账户与全体账户多空均值对比，识别“聪明钱”与大众的分歧；关注 sum_taker_long_short_vol_ratio 由正转负或由负转正的转折点，配合价格与量能确认；仅使用 is_closed=True 的桶以避免缺口，异常值需与采集时间戳(ingested_at/updated_at)核对。",
+      "fields": {
+        "create_time": "指标时间（5m 桶起始时刻，UTC）。",
+        "symbol": "交易对，如 ETHUSDT。",
+        "sum_open_interest": "全市场合约张数总持仓量。",
+        "sum_open_interest_value": "按USDT计价的总持仓名义价值。",
+        "count_toptrader_long_short_ratio": "统计 Top Trader 多空比样本数量。",
+        "sum_toptrader_long_short_ratio": "Top Trader 多空比总和（待除以 count 得均值）。",
+        "count_long_short_ratio": "全体账户多空比样本数量。",
+        "sum_taker_long_short_vol_ratio": "taker 主导成交多空量比总和（待除以 样本数得均值）。",
+        "exchange": "来源交易所，固定 binance_futures_um。",
+        "source": "采集来源渠道标记。",
+        "is_closed": "该时间桶是否闭合（True 表示完整数据）。",
+        "ingested_at": "写入时间（采集时间戳）。",
+        "updated_at": "最后更新（重刷）时间。"
+      }
+    },
+    "indicator_samples": {
+      "what": "未定义",
+      "why": "未定义",
+      "how": "未定义"
+    },
+    "docs": {
+      "what": "未定义",
+      "why": "未定义",
+      "how": "未定义"
+    }
+  }
+}

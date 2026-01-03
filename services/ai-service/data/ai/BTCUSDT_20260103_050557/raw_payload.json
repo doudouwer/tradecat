@@ -1,0 +1,752 @@
+{
+  "symbol": "BTCUSDT",
+  "interval": "1h",
+  "generated_at": "2026-01-03T05:05:13.833929+00:00",
+  "candles": {
+    "1h": [
+      {
+        "bucket_ts": "2026-01-03 05:00:00+00:00",
+        "open": 90121.8,
+        "high": 90158.0,
+        "low": 90121.8,
+        "close": 90157.9,
+        "volume": 76.124,
+        "quote_volume": 6862101.2033,
+        "trade_count": 2519,
+        "taker_buy_volume": 50.37,
+        "taker_buy_quote_volume": 4540525.1963
+      },
+      {
+        "bucket_ts": "2026-01-03 04:00:00+00:00",
+        "open": 90280.0,
+        "high": 90456.0,
+        "low": 89989.9,
+        "close": 90121.8,
+        "volume": 3541.014,
+        "quote_volume": 319264733.051,
+        "trade_count": 64749,
+        "taker_buy_volume": 1755.63,
+        "taker_buy_quote_volume": 158301275.4137
+      },
+      {
+        "bucket_ts": "2026-01-03 03:00:00+00:00",
+        "open": 90291.1,
+        "high": 90347.2,
+        "low": 90150.0,
+        "close": 90279.9,
+        "volume": 1397.386,
+        "quote_volume": 967370.0055,
+        "trade_count": 450,
+        "taker_buy_volume": 6.138,
+        "taker_buy_quote_volume": 554089.0745
+      },
+      {
+        "bucket_ts": "2026-01-03 02:00:00+00:00",
+        "open": 90232.8,
+        "high": 90365.9,
+        "low": 90085.3,
+        "close": 90291.2,
+        "volume": 1575.054,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-03 01:00:00+00:00",
+        "open": 90113.9,
+        "high": 90254.9,
+        "low": 90022.8,
+        "close": 90232.9,
+        "volume": 1527.578,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-03 00:00:00+00:00",
+        "open": 89951.5,
+        "high": 90149.8,
+        "low": 89914.5,
+        "close": 90114.0,
+        "volume": 1984.167,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 23:00:00+00:00",
+        "open": 90155.0,
+        "high": 90158.4,
+        "low": 89877.8,
+        "close": 89886.5,
+        "volume": 1421.138,
+        "quote_volume": 1947300.7535,
+        "trade_count": 312,
+        "taker_buy_volume": 17.839,
+        "taker_buy_quote_volume": 1603485.2735
+      },
+      {
+        "bucket_ts": "2026-01-02 22:00:00+00:00",
+        "open": 90015.4,
+        "high": 90368.7,
+        "low": 89975.0,
+        "close": 90154.9,
+        "volume": 3101.495,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 21:00:00+00:00",
+        "open": 89700.2,
+        "high": 90145.5,
+        "low": 89686.7,
+        "close": 90015.4,
+        "volume": 2740.221,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 20:00:00+00:00",
+        "open": 89865.0,
+        "high": 90040.9,
+        "low": 89588.0,
+        "close": 89700.1,
+        "volume": 3724.086,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 19:00:00+00:00",
+        "open": 89735.3,
+        "high": 90120.9,
+        "low": 89609.1,
+        "close": 89865.0,
+        "volume": 5805.978,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 18:00:00+00:00",
+        "open": 90320.0,
+        "high": 90512.6,
+        "low": 89510.9,
+        "close": 89735.3,
+        "volume": 10278.889,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 17:00:00+00:00",
+        "open": 90333.9,
+        "high": 90945.1,
+        "low": 90131.1,
+        "close": 90319.9,
+        "volume": 11928.025,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 16:00:00+00:00",
+        "open": 89373.0,
+        "high": 90881.3,
+        "low": 89145.2,
+        "close": 90334.0,
+        "volume": 25618.803,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 15:00:00+00:00",
+        "open": 89536.5,
+        "high": 89850.0,
+        "low": 88756.5,
+        "close": 89373.1,
+        "volume": 15985.582,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 14:00:00+00:00",
+        "open": 89311.6,
+        "high": 90126.5,
+        "low": 88401.2,
+        "close": 89536.4,
+        "volume": 25845.107,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 13:00:00+00:00",
+        "open": 89360.0,
+        "high": 89679.0,
+        "low": 89262.3,
+        "close": 89311.6,
+        "volume": 5529.782,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 12:00:00+00:00",
+        "open": 89458.3,
+        "high": 89550.0,
+        "low": 89338.9,
+        "close": 89360.1,
+        "volume": 3286.671,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 11:00:00+00:00",
+        "open": 89618.5,
+        "high": 89636.6,
+        "low": 89306.2,
+        "close": 89458.3,
+        "volume": 4729.795,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 10:00:00+00:00",
+        "open": 89430.0,
+        "high": 89900.0,
+        "low": 89399.4,
+        "close": 89618.5,
+        "volume": 12283.205,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      }
+    ],
+    "4h": [
+      {
+        "bucket_ts": "2026-01-03 04:00:00+00:00",
+        "open": 90280.0,
+        "high": 90456.0,
+        "low": 89989.9,
+        "close": 90157.9,
+        "volume": 3617.138,
+        "quote_volume": 326126834.2543,
+        "trade_count": 67268,
+        "taker_buy_volume": 1806.0,
+        "taker_buy_quote_volume": 162841800.61
+      },
+      {
+        "bucket_ts": "2026-01-03 00:00:00+00:00",
+        "open": 89951.5,
+        "high": 90365.9,
+        "low": 89914.5,
+        "close": 90279.9,
+        "volume": 6484.185,
+        "quote_volume": 967370.0055,
+        "trade_count": 450,
+        "taker_buy_volume": 6.138,
+        "taker_buy_quote_volume": 554089.0745
+      },
+      {
+        "bucket_ts": "2026-01-02 20:00:00+00:00",
+        "open": 89865.0,
+        "high": 90368.7,
+        "low": 89588.0,
+        "close": 89886.5,
+        "volume": 10986.94,
+        "quote_volume": 1947300.7535,
+        "trade_count": 312,
+        "taker_buy_volume": 17.839,
+        "taker_buy_quote_volume": 1603485.2735
+      },
+      {
+        "bucket_ts": "2026-01-02 16:00:00+00:00",
+        "open": 89373.0,
+        "high": 90945.1,
+        "low": 89145.2,
+        "close": 89865.0,
+        "volume": 53631.695,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 12:00:00+00:00",
+        "open": 89458.3,
+        "high": 90126.5,
+        "low": 88401.2,
+        "close": 89373.1,
+        "volume": 50647.142,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 08:00:00+00:00",
+        "open": 88829.3,
+        "high": 89900.0,
+        "low": 88780.0,
+        "close": 89458.3,
+        "volume": 27887.349,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 04:00:00+00:00",
+        "open": 88899.3,
+        "high": 89055.0,
+        "low": 88533.6,
+        "close": 88829.3,
+        "volume": 12241.301,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-02 00:00:00+00:00",
+        "open": 88800.0,
+        "high": 89088.0,
+        "low": 88324.4,
+        "close": 88899.3,
+        "volume": 19809.197,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-01 20:00:00+00:00",
+        "open": 88354.8,
+        "high": 88881.4,
+        "low": 88193.2,
+        "close": 88800.0,
+        "volume": 9662.662,
+        "quote_volume": 36576803.3608,
+        "trade_count": 6400,
+        "taker_buy_volume": 143.572,
+        "taker_buy_quote_volume": 12748891.5237
+      },
+      {
+        "bucket_ts": "2026-01-01 16:00:00+00:00",
+        "open": 87986.8,
+        "high": 88475.8,
+        "low": 87833.1,
+        "close": 88354.8,
+        "volume": 11314.033,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-01 12:00:00+00:00",
+        "open": 87980.1,
+        "high": 88079.3,
+        "low": 87758.4,
+        "close": 87986.8,
+        "volume": 8130.085,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-01 08:00:00+00:00",
+        "open": 87603.7,
+        "high": 87985.6,
+        "low": 87590.0,
+        "close": 87980.1,
+        "volume": 6046.668,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-01 04:00:00+00:00",
+        "open": 87824.6,
+        "high": 87831.6,
+        "low": 87508.4,
+        "close": 87603.7,
+        "volume": 5685.305,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2026-01-01 00:00:00+00:00",
+        "open": 87608.3,
+        "high": 88065.0,
+        "low": 87600.0,
+        "close": 87824.6,
+        "volume": 7102.55,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2025-12-31 20:00:00+00:00",
+        "open": 87515.0,
+        "high": 87849.7,
+        "low": 87189.2,
+        "close": 87608.2,
+        "volume": 10773.672,
+        "quote_volume": 107433867.1856,
+        "trade_count": 36608,
+        "taker_buy_volume": 637.314,
+        "taker_buy_quote_volume": 55859865.0286
+      },
+      {
+        "bucket_ts": "2025-12-31 16:00:00+00:00",
+        "open": 87909.0,
+        "high": 88024.3,
+        "low": 87350.5,
+        "close": 87515.0,
+        "volume": 24053.975,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2025-12-31 12:00:00+00:00",
+        "open": 88967.6,
+        "high": 89192.8,
+        "low": 87729.2,
+        "close": 87909.0,
+        "volume": 31536.84,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2025-12-31 08:00:00+00:00",
+        "open": 88568.9,
+        "high": 89000.0,
+        "low": 88339.9,
+        "close": 88967.6,
+        "volume": 12440.16,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2025-12-31 04:00:00+00:00",
+        "open": 88411.6,
+        "high": 88596.0,
+        "low": 88280.1,
+        "close": 88569.0,
+        "volume": 6284.482,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      },
+      {
+        "bucket_ts": "2025-12-31 00:00:00+00:00",
+        "open": 88455.2,
+        "high": 88780.0,
+        "low": 88134.9,
+        "close": 88411.5,
+        "volume": 11679.228,
+        "quote_volume": null,
+        "trade_count": null,
+        "taker_buy_volume": null,
+        "taker_buy_quote_volume": null
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "create_time": "2026-01-03 04:55:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96182.94500000",
+      "sum_open_interest_value": "8668809187.28312900",
+      "sum_toptrader_long_short_ratio": "2.2136",
+      "sum_taker_long_short_vol_ratio": "0.5198"
+    },
+    {
+      "create_time": "2026-01-03 04:50:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96145.80800000",
+      "sum_open_interest_value": "8662900748.67360000",
+      "sum_toptrader_long_short_ratio": "2.2100",
+      "sum_taker_long_short_vol_ratio": "1.7746"
+    },
+    {
+      "create_time": "2026-01-03 04:45:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96143.07800000",
+      "sum_open_interest_value": "8655569026.18400000",
+      "sum_toptrader_long_short_ratio": "2.2091",
+      "sum_taker_long_short_vol_ratio": "1.0839"
+    },
+    {
+      "create_time": "2026-01-03 04:40:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96272.29300000",
+      "sum_open_interest_value": "8671957845.47820000",
+      "sum_toptrader_long_short_ratio": "2.2204",
+      "sum_taker_long_short_vol_ratio": "0.7423"
+    },
+    {
+      "create_time": "2026-01-03 04:35:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96486.35100000",
+      "sum_open_interest_value": "8701939791.60292600",
+      "sum_toptrader_long_short_ratio": "2.2305",
+      "sum_taker_long_short_vol_ratio": "0.6765"
+    },
+    {
+      "create_time": "2026-01-03 04:25:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96466.58800000",
+      "sum_open_interest_value": "8704835924.93018700",
+      "sum_toptrader_long_short_ratio": "2.2315",
+      "sum_taker_long_short_vol_ratio": "0.6991"
+    },
+    {
+      "create_time": "2026-01-03 04:20:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96453.82000000",
+      "sum_open_interest_value": "8703423639.26200000",
+      "sum_toptrader_long_short_ratio": "2.2332",
+      "sum_taker_long_short_vol_ratio": "0.3819"
+    },
+    {
+      "create_time": "2026-01-03 04:10:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96517.52900000",
+      "sum_open_interest_value": "8713028501.09821900",
+      "sum_toptrader_long_short_ratio": "2.2333",
+      "sum_taker_long_short_vol_ratio": "0.4847"
+    },
+    {
+      "create_time": "2026-01-03 04:05:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96527.19100000",
+      "sum_open_interest_value": "8722689267.43410000",
+      "sum_toptrader_long_short_ratio": "2.2339",
+      "sum_taker_long_short_vol_ratio": "2.4793"
+    },
+    {
+      "create_time": "2026-01-03 04:00:00",
+      "symbol": "BTCUSDT",
+      "sum_open_interest": "96556.02300000",
+      "sum_open_interest_value": "8717077756.44000000",
+      "sum_toptrader_long_short_ratio": "2.2241",
+      "sum_taker_long_short_vol_ratio": "0.3865"
+    }
+  ],
+  "indicators": {
+    "MACD柱状扫描器.py": [
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T22:00:00+00:00",
+        "信号概述": "延续",
+        "MACD": 417.669451,
+        "MACD信号线": 396.58181,
+        "MACD柱状图": 42.175282,
+        "DIF": 417.669451,
+        "DEA": 396.58181,
+        "成交额": 0,
+        "当前价格": 90161.2
+      }
+    ],
+    "布林带扫描器.py": [
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "带宽": 1.5946,
+        "中轨斜率": 40.788,
+        "中轨价格": 88315.2,
+        "上轨价格": 89019.332051,
+        "下轨价格": 87611.067949,
+        "百分比b": 0.7019,
+        "价格": 88599.5,
+        "成交额": 8412028.3009,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "带宽": 1.5912,
+        "中轨斜率": 40.697,
+        "中轨价格": 88314.29,
+        "上轨价格": 89016.920456,
+        "下轨价格": 87611.659544,
+        "百分比b": 0.69,
+        "价格": 88581.3,
+        "成交额": 6296591.1333,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "带宽": 1.5985,
+        "中轨斜率": 40.8875,
+        "中轨价格": 88316.195,
+        "上轨价格": 89022.072668,
+        "下轨价格": 87610.317332,
+        "百分比b": 0.7148,
+        "价格": 88619.4,
+        "成交额": 20756640.8509,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "带宽": 1.6223,
+        "中轨斜率": 41.394,
+        "中轨价格": 88321.26,
+        "上轨价格": 89037.673366,
+        "下轨价格": 87604.846634,
+        "百分比b": 0.7788,
+        "价格": 88720.7,
+        "成交额": 88753417.4263,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2025-12-31T15:00:00+00:00",
+        "带宽": 1.2901,
+        "中轨斜率": 10.9035,
+        "中轨价格": 88472.005,
+        "上轨价格": 89042.712747,
+        "下轨价格": 87901.297253,
+        "百分比b": 0.0067,
+        "价格": 87909.0,
+        "成交额": 0.0,
+        "指标": null
+      }
+    ],
+    "KDJ随机指标扫描器.py": [
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T22:00:00+00:00",
+        "J值": 65.118,
+        "K值": 63.946,
+        "D值": 63.36,
+        "信号概述": "金叉",
+        "成交额": 0,
+        "当前价格": 90161.2
+      }
+    ],
+    "ATR波幅扫描器.py": [
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T22:00:00+00:00",
+        "波动分类": "升温",
+        "ATR百分比": 0.6158,
+        "上轨": 90582.259652,
+        "中轨": 89471.85,
+        "下轨": 88361.440348,
+        "成交额": 0,
+        "当前价格": 90161.2
+      }
+    ],
+    "成交量比率扫描器.py": [
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "量比": 0.0349,
+        "信号概述": "缩量",
+        "成交额": 8412028.3009,
+        "当前价格": 88599.5,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "量比": 0.4443,
+        "信号概述": "缩量",
+        "成交额": 6296591.1333,
+        "当前价格": 88581.3,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "量比": 0.501,
+        "信号概述": "缩量",
+        "成交额": 20756640.8509,
+        "当前价格": 88619.4,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T05:00:00+00:00",
+        "量比": 0.7627,
+        "信号概述": "正常",
+        "成交额": 88753417.4263,
+        "当前价格": 88720.7,
+        "指标": null
+      },
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2025-12-31T15:00:00+00:00",
+        "量比": 3.6858,
+        "信号概述": "异常放量",
+        "成交额": 0.0,
+        "当前价格": 87909.0,
+        "指标": null
+      }
+    ],
+    "主动买卖比扫描器.py": [
+      {
+        "交易对": "BTCUSDT",
+        "周期": "1h",
+        "数据时间": "2026-01-02T22:00:00+00:00",
+        "主动买量": 0.0,
+        "主动卖量": 1020.408,
+        "主动买卖比": 0.0,
+        "价格": 90161.2
+      }
+    ]
+  }
+}
