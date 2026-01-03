@@ -5200,9 +5200,29 @@ async def handle_keyboard_message(update: Update, context: ContextTypes.DEFAULT_
     }
     
     try:
-        # -------- 单币感叹号触发：如 "btc!" 或 "BTC！" --------
+        # -------- AI 分析触发：如 "btc@" 或 "BTC@" --------
         import re
         norm_text = (message_text or "").replace("\u200b", "").strip()
+        
+        if "@" in norm_text:
+            m = re.match(r'^([A-Za-z0-9]{2,15})@$', norm_text.strip())
+            if m:
+                try:
+                    from bot.ai_integration import get_ai_handler, AI_SERVICE_AVAILABLE, SELECTING_INTERVAL
+                    if not AI_SERVICE_AVAILABLE:
+                        await update.message.reply_text("🤖 AI 分析模块未安装")
+                        return
+                    ai_handler = get_ai_handler(symbols_provider=lambda: user_handler.get_active_symbols() if user_handler else None)
+                    coin = m.group(1).upper()
+                    context.user_data["ai_state"] = SELECTING_INTERVAL
+                    await ai_handler.handle_coin_input(update, context, coin)
+                    return
+                except Exception as e:
+                    logger.error(f"AI 分析触发失败: {e}")
+                    await update.message.reply_text(f"❌ AI 分析失败: {e}")
+                    return
+
+        # -------- 单币感叹号触发：如 "btc!" 或 "BTC！" --------
         sym = None
         if "!" in norm_text or "！" in norm_text:
             # 优先按符号前的 token 抓取

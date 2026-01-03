@@ -25,6 +25,7 @@ try:
         run_analysis,
         PromptRegistry,
     )
+    from src.bot.handler import match_ai_trigger
     AI_SERVICE_AVAILABLE = True
 except ImportError as e:
     AI_SERVICE_AVAILABLE = False
@@ -33,6 +34,7 @@ except ImportError as e:
     register_ai_handlers = None
     run_analysis = None
     PromptRegistry = None
+    match_ai_trigger = None
 
 __all__ = [
     "AIAnalysisHandler",
@@ -43,4 +45,5 @@ __all__ = [
     "SELECTING_COIN",
     "SELECTING_INTERVAL",
     "AI_SERVICE_AVAILABLE",
+    "match_ai_trigger",
 ]
