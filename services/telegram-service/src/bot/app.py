@@ -991,13 +991,13 @@ class UserRequestHandler:
         """获取主菜单键盘"""
         keyboard = [
             [
-                InlineKeyboardButton("🏠 主菜单", callback_data="main_menu"),
                 InlineKeyboardButton("📊 数据面板", callback_data="ranking_menu"),
                 InlineKeyboardButton("🔍 币种查询", callback_data="coin_query"),
-                InlineKeyboardButton("ℹ️ 帮助", callback_data="help"),
+                InlineKeyboardButton("🤖 AI分析", callback_data="start_coin_analysis"),
             ],
             [
-                InlineKeyboardButton("🤖 AI深度分析", callback_data="start_ai_analysis"),
+                InlineKeyboardButton("🏠 主菜单", callback_data="main_menu"),
+                InlineKeyboardButton("ℹ️ 帮助", callback_data="help"),
             ],
         ]
         return InlineKeyboardMarkup(keyboard)
