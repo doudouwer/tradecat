@@ -451,46 +451,23 @@ K线维度:
 
 ### 🤖 AI 一键安装（推荐）
 
-> 把下面的提示词复制到 **Claude / ChatGPT**，AI 会生成完整安装脚本，执行一次即可完成安装
+> 把下面的提示词复制到 **Claude / ChatGPT / Cursor / Kiro**，AI 会自动执行安装，零人工介入
 
 <details>
 <summary><strong>📋 点击展开安装提示词</strong></summary>
 
 ```
-生成一个 TradeCat 全自动安装脚本，要求：
+按照 https://github.com/tukuaiai/tradecat/blob/main/README.md 的说明帮我安装 TradeCat
 
-1. 系统: Ubuntu 22.04/24.04
-2. 安装: TimescaleDB 2.x + TA-Lib + Python 3.10+
-3. 项目: github.com/tukuaiai/tradecat
-4. 数据库: postgres/postgres@localhost:5432/market_data
-
-脚本要求：
-- 一个 bash 脚本，复制执行即可
-- 自动检测已安装的组件，跳过
-- 每步有清晰的进度提示
-- 最后输出验证结果
-- 出错时显示具体原因
-
-脚本结构：
-1. 检查系统
-2. 安装系统依赖
-3. 安装 TimescaleDB
-4. 创建数据库
-5. 安装 TA-Lib
-6. 克隆项目到 ~/.projects/tradecat
-7. 运行 ./scripts/init.sh
-8. 验证安装
-
-直接输出完整脚本，不要解释。
+要求：
+1. 读取文档后直接执行安装命令，不要生成脚本
+2. 一步一步执行，每步确认成功后继续
+3. 遇到错误自动分析并修复
+4. 安装完成后运行 ./scripts/verify.sh 验证
+5. 全程零人工介入
 ```
 
 </details>
-
-AI 生成脚本后执行：
-
-```bash
-chmod +x install_tradecat.sh && ./install_tradecat.sh
-```
 
 ### 🪟 Windows WSL2 用户
 
