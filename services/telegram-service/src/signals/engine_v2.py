@@ -23,12 +23,30 @@ DB_PATH = os.environ.get(
     "INDICATOR_SQLITE_PATH",
     os.path.join(_PROJECT_ROOT, "libs/database/services/telegram-service/market_data.db")
 )
+COOLDOWN_DB_PATH = os.path.join(_PROJECT_ROOT, "libs/database/services/telegram-service/signal_cooldown.db")
 
 # 默认周期
 DEFAULT_TIMEFRAMES = ["1h", "4h", "1d"]
 
 # 默认最小成交额
 DEFAULT_MIN_VOLUME = 100000
+
+
+def _init_cooldown_db():
+    """初始化冷却数据库"""
+    os.makedirs(os.path.dirname(COOLDOWN_DB_PATH), exist_ok=True)
+    conn = sqlite3.connect(COOLDOWN_DB_PATH)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS cooldowns (
+            key TEXT PRIMARY KEY,
+            timestamp REAL
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+
+_init_cooldown_db()
 
 
 @dataclass
@@ -122,13 +140,33 @@ class SignalEngine:
     def _is_cooled_down(self, rule: SignalRule, symbol: str, timeframe: str) -> bool:
         """检查是否在冷却期"""
         key = f"{rule.name}_{symbol}_{timeframe}"
-        last = self.cooldown.get(key, 0)
+        # 先查内存缓存
+        last = self.cooldown.get(key)
+        if last is None:
+            # 从数据库加载
+            try:
+                conn = sqlite3.connect(COOLDOWN_DB_PATH)
+                row = conn.execute("SELECT timestamp FROM cooldowns WHERE key = ?", (key,)).fetchone()
+                conn.close()
+                last = row[0] if row else 0
+                self.cooldown[key] = last
+            except Exception:
+                last = 0
         return time.time() - last > rule.cooldown
     
     def _set_cooldown(self, rule: SignalRule, symbol: str, timeframe: str):
         """设置冷却"""
         key = f"{rule.name}_{symbol}_{timeframe}"
-        self.cooldown[key] = time.time()
+        ts = time.time()
+        self.cooldown[key] = ts
+        # 持久化
+        try:
+            conn = sqlite3.connect(COOLDOWN_DB_PATH)
+            conn.execute("INSERT OR REPLACE INTO cooldowns (key, timestamp) VALUES (?, ?)", (key, ts))
+            conn.commit()
+            conn.close()
+        except Exception as e:
+            logger.warning(f"保存冷却失败: {e}")
     
     def check_signals(self) -> List[Signal]:
         """检查所有规则"""
