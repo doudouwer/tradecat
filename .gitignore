@@ -93,6 +93,4 @@ config/.env
 *.db-shm
 *.db-wal
 *.db-journal
-MARKETING.md
-CHANGELOG.md
 services/ai-service/data/
