@@ -15,11 +15,24 @@
 ---
 
 <p>
-  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"><img src="https://img.shields.io/badge/PostgreSQL-TimescaleDB-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="TimescaleDB"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
-  <img src="https://img.shields.io/badge/Pandas-数据处理-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"><img src="https://img.shields.io/badge/NumPy-计算-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"><img src="https://img.shields.io/badge/TA--Lib-技术分析-green?style=for-the-badge" alt="TA-Lib"><img src="https://img.shields.io/badge/Pydantic-数据验证-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic">
-  <img src="https://img.shields.io/badge/CCXT-交易所API-000?style=for-the-badge" alt="CCXT"><img src="https://img.shields.io/badge/Cryptofeed-WebSocket-purple?style=for-the-badge" alt="Cryptofeed"><img src="https://img.shields.io/badge/AKShare-A股数据-red?style=for-the-badge" alt="AKShare"><img src="https://img.shields.io/badge/yfinance-美股数据-7B68EE?style=for-the-badge" alt="yfinance">
-  <img src="https://img.shields.io/badge/OpenBB-数据聚合-orange?style=for-the-badge" alt="OpenBB"><img src="https://img.shields.io/badge/QuantLib-衍生品定价-blue?style=for-the-badge" alt="QuantLib"><img src="https://img.shields.io/badge/FRED_API-宏观经济-1E90FF?style=for-the-badge" alt="FRED">
-  <img src="https://img.shields.io/badge/Telegram_Bot-机器人-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Bot"><img src="https://img.shields.io/badge/AsyncIO-异步-FF6F00?style=for-the-badge&logo=python&logoColor=white" alt="AsyncIO"><img src="https://img.shields.io/badge/AIOHTTP-HTTP-2C5BB4?style=for-the-badge&logo=aiohttp&logoColor=white" alt="AIOHTTP"><img src="https://img.shields.io/badge/HTTPX-HTTP-3d4f5d?style=for-the-badge" alt="HTTPX">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/PostgreSQL-TimescaleDB-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="TimescaleDB">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/Pandas-数据处理-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+  <img src="https://img.shields.io/badge/NumPy-计算-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+  <img src="https://img.shields.io/badge/TA--Lib-技术分析-green?style=for-the-badge" alt="TA-Lib">
+  <img src="https://img.shields.io/badge/Pydantic-数据验证-E92063?style=for-the-badge&logo=pydantic&logoColor=white" alt="Pydantic">
+  <img src="https://img.shields.io/badge/CCXT-交易所API-000?style=for-the-badge" alt="CCXT">
+  <img src="https://img.shields.io/badge/Cryptofeed-WebSocket-purple?style=for-the-badge" alt="Cryptofeed">
+  <img src="https://img.shields.io/badge/AKShare-A股数据-red?style=for-the-badge" alt="AKShare">
+  <img src="https://img.shields.io/badge/yfinance-美股数据-7B68EE?style=for-the-badge" alt="yfinance">
+  <img src="https://img.shields.io/badge/OpenBB-数据聚合-orange?style=for-the-badge" alt="OpenBB">
+  <img src="https://img.shields.io/badge/QuantLib-衍生品定价-blue?style=for-the-badge" alt="QuantLib">
+  <img src="https://img.shields.io/badge/FRED_API-宏观经济-1E90FF?style=for-the-badge" alt="FRED">
+  <img src="https://img.shields.io/badge/Telegram_Bot-机器人-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram Bot">
+  <img src="https://img.shields.io/badge/AsyncIO-异步-FF6F00?style=for-the-badge&logo=python&logoColor=white" alt="AsyncIO">
+  <img src="https://img.shields.io/badge/AIOHTTP-HTTP-2C5BB4?style=for-the-badge&logo=aiohttp&logoColor=white" alt="AIOHTTP">
+  <img src="https://img.shields.io/badge/HTTPX-HTTP-3d4f5d?style=for-the-badge" alt="HTTPX">
 </p>
 
 <p>
