@@ -319,53 +319,78 @@ vim config/.env
 
 ### 系统架构图
 
-```
-                              ┌─────────────────────────────────────────┐
-                              │            币安交易所 API                │
-                              │   WebSocket K线  │  REST 期货指标       │
-                              └────────┬─────────┴──────────┬───────────┘
-                                       │                    │
-                    ┌──────────────────▼────────────────────▼──────────────────┐
-                    │                    data-service                          │
-                    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐      │
-                    │  │  backfill   │  │    live     │  │   metrics   │      │
-                    │  │  历史回填    │  │  实时采集   │  │  期货指标   │      │
-                    │  └─────────────┘  └─────────────┘  └─────────────┘      │
-                    └──────────────────────────┬───────────────────────────────┘
-                                               │
-                    ┌──────────────────────────▼───────────────────────────────┐
-                    │                     TimescaleDB                          │
-                    │  ┌─────────────────────┐  ┌─────────────────────┐       │
-                    │  │    candles_1m       │  │  futures_metrics    │       │
-                    │  │   3.73亿条 / 99GB   │  │  9457万条 / 5GB     │       │
-                    │  └─────────────────────┘  └─────────────────────┘       │
-                    └──────────────────────────┬───────────────────────────────┘
-                                               │
-                    ┌──────────────────────────▼───────────────────────────────┐
-                    │                   trading-service                        │
-                    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐      │
-                    │  │   engine    │  │ indicators  │  │  scheduler  │      │
-                    │  │  计算引擎   │  │  38个指标   │  │  定时调度   │      │
-                    │  └─────────────┘  └─────────────┘  └─────────────┘      │
-                    └──────────────────────────┬───────────────────────────────┘
-                                               │
-                    ┌──────────────────────────▼───────────────────────────────┐
-                    │                    market_data.db                        │
-                    │              SQLite 指标结果 (38张表)                    │
-                    └──────────────────────────┬───────────────────────────────┘
-                                               │
-                    ┌──────────────────────────▼───────────────────────────────┐
-                    │                  telegram-service                        │
-                    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐      │
-                    │  │   cards     │  │  handlers   │  │    bot      │      │
-                    │  │  排行卡片   │  │  命令处理   │  │  主程序     │      │
-                    │  └─────────────┘  └─────────────┘  └─────────────┘      │
-                    └──────────────────────────┬───────────────────────────────┘
-                                               │
-                              ┌────────────────▼────────────────┐
-                              │         Telegram 用户           │
-                              │   排行榜查询  │  信号接收       │
-                              └─────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph 外部数据源["🌐 币安交易所 API"]
+        API_WS["WebSocket K线"]
+        API_REST["REST 期货指标"]
+    end
+
+    subgraph DS["📦 data-service<br><small>Python, asyncio, ccxt, cryptofeed</small>"]
+        DS_BF["backfill<br>历史回填"]
+        DS_LIVE["live<br>实时采集"]
+        DS_MET["metrics<br>期货指标"]
+    end
+
+    API_WS --> DS_LIVE
+    API_REST --> DS_MET
+
+    subgraph TSDB["🗄️ TimescaleDB :5433<br><small>PostgreSQL 16 + TimescaleDB</small>"]
+        TS_CANDLE[("candles_1m<br>3.73亿条 / 99GB")]
+        TS_FUTURE[("futures_metrics<br>9457万条 / 5GB")]
+    end
+
+    DS_BF --> TS_CANDLE
+    DS_LIVE --> TS_CANDLE
+    DS_MET --> TS_FUTURE
+
+    subgraph TS["📊 trading-service<br><small>Python, pandas, numpy, TA-Lib</small>"]
+        TR_ENG["engine<br>计算引擎"]
+        TR_IND["indicators<br>38个指标"]
+        TR_SCH["scheduler<br>定时调度"]
+        TR_PRI["priority<br>高优先级币种筛选"]
+    end
+
+    TS_CANDLE --> TR_ENG
+    TS_FUTURE --> TR_ENG
+    TR_SCH --> TR_ENG
+    TR_ENG --> TR_IND
+    TR_ENG --> TR_PRI
+
+    SQLITE[("📁 market_data.db<br>SQLite 指标结果 38张表")]
+    TR_IND --> SQLITE
+
+    subgraph AI["🧠 AI 智能分析"]
+        AI_WY["Wyckoff 方法论"]
+        AI_MOD["多模型支持<br>Gemini / OpenAI / Claude / DeepSeek"]
+    end
+
+    subgraph TG["🤖 telegram-service<br><small>python-telegram-bot, aiohttp</small>"]
+        TG_CARD["cards<br>排行卡片 20+"]
+        TG_SIG["signals<br>信号检测引擎<br>109条规则"]
+        TG_HAND["handlers<br>命令处理"]
+        TG_BOT["bot<br>主程序"]
+    end
+
+    SQLITE --> TG_CARD
+    SQLITE --> TG_SIG
+    TG_CARD --> TG_BOT
+    TG_SIG --> TG_BOT
+    TG_HAND --> TG_BOT
+    AI_MOD --> TG_BOT
+    TS_CANDLE -.-> AI_WY
+    AI_WY --> AI_MOD
+
+    subgraph ORD["💹 order-service<br><small>Python, ccxt, cryptofeed</small>"]
+        ORD_MM["market-maker<br>Avellaneda-Stoikov 做市"]
+        ORD_EX["交易执行"]
+    end
+
+    TS_CANDLE -.-> ORD_MM
+    TS_FUTURE -.-> ORD_MM
+
+    USER["👤 Telegram 用户<br>排行榜查询 | 信号接收 | AI分析"]
+    TG_BOT --> USER
 ```
 
 ### 服务说明
@@ -380,17 +405,34 @@ vim config/.env
 
 ### 数据流向
 
-```
-币安 WebSocket ──▶ data-service ──▶ TimescaleDB (candles_1m)
-                                          │
-                                          ▼
-                                   trading-service
-                                          │
-                                          ▼
-                                   market_data.db (SQLite)
-                                          │
-                                          ▼
-                                   telegram-service ──▶ 用户
+```mermaid
+graph LR
+    subgraph 数据采集
+        A["🌐 币安 WebSocket"] --> B["📦 data-service"]
+    end
+    
+    subgraph 数据存储
+        B --> C[("🗄️ TimescaleDB<br>candles_1m<br>futures_metrics")]
+    end
+    
+    subgraph 指标计算
+        C --> D["📊 trading-service<br>38个指标计算"]
+        D --> E[("📁 market_data.db<br>SQLite")]
+    end
+    
+    subgraph 用户服务
+        E --> F["🤖 telegram-service"]
+        F --> G["👤 用户"]
+    end
+    
+    subgraph AI分析
+        C -.-> H["🧠 AI 分析<br>Gemini/OpenAI/Claude/DeepSeek"]
+        H -.-> F
+    end
+    
+    subgraph 交易执行
+        C -.-> I["💹 order-service<br>做市/交易"]
+    end
 ```
 
 </details>
